@@ -1,9 +1,15 @@
 const tweetRouter = require("express").Router();
 const useAuth = require("../middleware/useAuth");
-const postTweet = require("../controllers/tweets/postTweet");
-const deleteTweet = require("../controllers/tweets/deleteTweet");
+const {
+  postTweet,
+  deleteTweet,
+  getTweets,
+  userTweets,
+} = require("../controllers/tweets/index");
 
 tweetRouter
+  .get("/all", getTweets)
+  .get("/:userId", userTweets)
   .post("/post-tweet", useAuth, postTweet)
   .delete("/delete/:tweetId", useAuth, deleteTweet);
 

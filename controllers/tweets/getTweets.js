@@ -1,4 +1,4 @@
-const Tweets = require("../../models/tweet");
+const Tweet = require("../../models/tweet");
 
 module.exports = async (req, res, next) => {
   try {
@@ -8,7 +8,7 @@ module.exports = async (req, res, next) => {
         .status(404)
         .json({ message: err.message || "Tweets not found" });
     }
-    const allTweets = await Tweets.find({});
+    const allTweets = await Tweet.find({});
     res.status(200).json({ allTweets });
   } catch (err) {
     return res

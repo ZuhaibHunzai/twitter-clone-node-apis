@@ -15,7 +15,6 @@ module.exports = async (req, res, next) => {
       userId: user._id,
     });
     await tweet.save();
-    // insert tweet in ibn usrs document
     res.status(200).json(tweet);
   } catch (err) {
     res.status(500).json({ message: err.message || "Something went wrong" });
