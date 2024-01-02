@@ -1,9 +1,13 @@
 const { model, Schema } = require("mongoose");
 
 const Tweets = model(
-  "Tweets",
+  "Tweet",
   new Schema({
-    tweetText: {
+    userId: {
+      ref: "User",
+      type: Schema.Types.ObjectId,
+    },
+    tweet: {
       type: "string",
       required: true,
     },

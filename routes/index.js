@@ -1,7 +1,8 @@
 const indexRouter = require("express").Router();
-const authRouter = require("./auth");
 
 // api/auth
-indexRouter.use("/auth", authRouter);
+indexRouter.use("/auth", require("./auth"));
+// api/tweets
+indexRouter.use("/tweets", require("./tweets"));
 
 module.exports = indexRouter;
