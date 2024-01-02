@@ -27,7 +27,7 @@ module.exports = async (req, res, next) => {
       const userData = { ...user.toObject(), password: undefined };
 
       // old token
-      const payload = { accessToken: authToken, userData: userData };
+      const payload = { accessToken: authToken, user: userData };
       // ** return 200 with user data
       req.user = payload;
 

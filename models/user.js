@@ -25,15 +25,6 @@ const User = model(
       enum: ["admin", "user"],
       default: "user",
     },
-    tweets: [
-      {
-        tweetId: {
-          type: Schema.Types.ObjectId,
-          ref: "tweets",
-          required: true,
-        },
-      },
-    ],
   })
 );
 

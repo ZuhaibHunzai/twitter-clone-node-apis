@@ -1,15 +1,15 @@
-const Products = require("../../models/products/product");
+const Tweets = require("../../models/tweet");
 
 module.exports = async (req, res, next) => {
   try {
-    const products = req;
-    if (!products) {
+    const tweets = req;
+    if (!tweets) {
       return res
         .status(404)
-        .json({ message: err.message || "Products not found" });
+        .json({ message: err.message || "Tweets not found" });
     }
-    const allProducts = await Products.find({});
-    res.status(200).json({ allProducts });
+    const allTweets = await Tweets.find({});
+    res.status(200).json({ allTweets });
   } catch (err) {
     return res
       .status(500)
