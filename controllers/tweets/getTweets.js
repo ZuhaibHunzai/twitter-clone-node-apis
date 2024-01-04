@@ -8,11 +8,14 @@ module.exports = async (req, res, next) => {
         .status(404)
         .json({ message: err.message || "Tweets not found" });
     }
-    const allTweets = await Tweet.find({});
+
+    // Find all tweets and sort by createdAt field in descending order
+    const allTweets = await Tweet.find({}).sort({ date: -1 });
+
     res.status(200).json({ allTweets });
   } catch (err) {
     return res
       .status(500)
-      .json({ message: err.message || "something went wrong" });
+      .json({ message: err.message || "Something went wrong" });
   }
 };

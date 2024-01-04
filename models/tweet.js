@@ -7,9 +7,20 @@ const Tweets = model(
       ref: "User",
       type: Schema.Types.ObjectId,
     },
+    name: {
+      type: "string",
+      ref: "User",
+    },
+    userName: {
+      type: "string",
+      ref: "User",
+    },
     tweet: {
       type: "string",
       required: true,
+    },
+    date: {
+      type: "date",
     },
   })
 );
