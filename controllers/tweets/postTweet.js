@@ -13,6 +13,9 @@ module.exports = async (req, res, next) => {
     const tweet = new Tweet({
       tweet: tweetText,
       userId: user._id,
+      name: user.name,
+      userName: user.userName,
+      date: Date.now(),
     });
     await tweet.save();
     res.status(200).json(tweet);
